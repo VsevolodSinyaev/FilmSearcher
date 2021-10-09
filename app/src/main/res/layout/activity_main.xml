@@ -6,19 +6,61 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <LinearLayout
         android:layout_width="300dp"
-        android:layout_height="500dp"
-        android:layout_marginTop="11dp"
-        android:background="@android:color/holo_orange_light"
+        android:layout_height="wrap_content"
+        android:background="@drawable/corner_background"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout2" />
+        app:layout_constraintBottom_toTopOf="@id/bottom_container"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_container">
+
+
+        <Button
+            android:id="@+id/button_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:background="?selectableItemBackgroundBorderless"
+            android:text="@string/btn_menu" />
+
+        <Button
+            android:id="@+id/button_favorite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:background="?selectableItemBackgroundBorderless"
+            android:text="@string/btn_favorite" />
+
+        <Button
+            android:id="@+id/button_watch_later"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:background="?selectableItemBackgroundBorderless"
+            android:text="@string/btn_watch_later" />
+
+        <Button
+            android:id="@+id/button_selected"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:background="?selectableItemBackgroundBorderless"
+            android:text="@string/btn_selected" />
+
+        <Button
+            android:id="@+id/button_options"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:background="?selectableItemBackgroundBorderless"
+            android:text="@string/btn_options" />
+    </LinearLayout>
 
     <FrameLayout
-        android:id="@+id/frameLayout"
+        android:id="@+id/bottom_container"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="@color/teal_200"
@@ -28,14 +70,75 @@
 
     </FrameLayout>
 
-    <FrameLayout
-        android:id="@+id/frameLayout2"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/top_container"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@color/purple_500"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="15dp"
+        android:elevation="5dp"
         app:layout_constraintTop_toTopOf="parent">
 
-    </FrameLayout>
+        <LinearLayout
+            android:id="@+id/top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:scaleType="centerCrop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/no_time_to_die" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:scaleType="centerCrop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/dune" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:scaleType="centerCrop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1 "
+                app:srcCompat="@drawable/mandalorian" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:scaleType="centerCrop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/minions_the_rise_of_gru" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:scaleType="centerCrop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/halloween_kills" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:autoLink="web"
+        android:linksClickable="true"
+        android:text="@string/disclaimer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_container" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
